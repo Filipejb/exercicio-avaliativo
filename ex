@@ -19,7 +19,7 @@ Usuario usuarios[MAX_USERS];
 int numUsuarios = 0;
 int proximoID = 1;
 
-// Função para verificar se o email é válido
+
 int validarEmail(const char *email) {
     const char *at = strchr(email, '@');
     return at != NULL;
@@ -50,45 +50,45 @@ void adicionarUsuario() {
 
     printf("Digite o nome completo: ");
     scanf("%99[^\n]", novoUsuario.nome);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar();
 
     printf("Digite o email: ");
     scanf("%99[^\n]", novoUsuario.email);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar(); 
 
     while (!validarEmail(novoUsuario.email)) {
         printf("Email inválido. Digite novamente: ");
         scanf("%99[^\n]", novoUsuario.email);
-        getchar(); // Limpar o caractere de nova linha do buffer de entrada
+        getchar(); 
     }
 
     printf("Digite o sexo (Feminino, Masculino ou Indiferente): ");
     scanf("%14[^\n]", novoUsuario.sexo);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar();
 
     while (!validarSexo(novoUsuario.sexo)) {
         printf("Sexo inválido. Digite novamente: ");
         scanf("%14[^\n]", novoUsuario.sexo);
-        getchar(); // Limpar o caractere de nova linha do buffer de entrada
+        getchar();
     }
 
     printf("Digite o endereço: ");
     scanf("%199[^\n]", novoUsuario.endereco);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar(); 
 
     printf("Digite a altura (entre 1 e 2 metros): ");
     scanf("%lf", &novoUsuario.altura);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar(); 
 
     while (!validarAltura(novoUsuario.altura)) {
         printf("Altura inválida. Digite novamente: ");
         scanf("%lf", &novoUsuario.altura);
-        getchar(); // Limpar o caractere de nova linha do buffer de entrada
+        getchar();
     }
 
     printf("Vacina (0 - Não, 1 - Sim): ");
     scanf("%d", &novoUsuario.vacina);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar(); 
 
     usuarios[numUsuarios] = novoUsuario;
     numUsuarios++;
@@ -131,7 +131,7 @@ void editarUsuario() {
     int id;
     printf("Digite o ID do usuário que deseja editar: ");
     scanf("%d", &id);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar(); 
 
     for (int i = 0; i < numUsuarios; i++) {
         if (usuarios[i].id == id) {
@@ -139,45 +139,45 @@ void editarUsuario() {
 
             printf("Digite o novo nome: ");
             scanf("%99[^\n]", usuarios[i].nome);
-            getchar(); // Limpar o caractere de nova linha do buffer de entrada
+            getchar();
 
             printf("Digite o novo email: ");
             scanf("%99[^\n]", usuarios[i].email);
-            getchar(); // Limpar o caractere de nova linha do buffer de entrada
+            getchar();
 
             while (!validarEmail(usuarios[i].email)) {
                 printf("Email inválido. Digite novamente: ");
                 scanf("%99[^\n]", usuarios[i].email);
-                getchar(); // Limpar o caractere de nova linha do buffer de entrada
+                getchar(); 
             }
 
             printf("Digite o novo sexo (Feminino, Masculino ou Indiferente): ");
             scanf("%14[^\n]", usuarios[i].sexo);
-            getchar(); // Limpar o caractere de nova linha do buffer de entrada
+            getchar();
 
             while (!validarSexo(usuarios[i].sexo)) {
                 printf("Sexo inválido. Digite novamente: ");
                 scanf("%14[^\n]", usuarios[i].sexo);
-                getchar(); // Limpar o caractere de nova linha do buffer de entrada
+                getchar();
             }
 
             printf("Digite o novo endereço: ");
             scanf("%199[^\n]", usuarios[i].endereco);
-            getchar(); // Limpar o caractere de nova linha do buffer de entrada
+            getchar(); 
 
             printf("Digite a nova altura (entre 1 e 2 metros): ");
             scanf("%lf", &usuarios[i].altura);
-            getchar(); // Limpar o caractere de nova linha do buffer de entrada
+            getchar(); 
 
             while (!validarAltura(usuarios[i].altura)) {
                 printf("Altura inválida. Digite novamente: ");
                 scanf("%lf", &usuarios[i].altura);
-                getchar(); // Limpar o caractere de nova linha do buffer de entrada
+                getchar(); 
             }
 
             printf("Vacina (0 - Não, 1 - Sim): ");
             scanf("%d", &usuarios[i].vacina);
-            getchar(); // Limpar o caractere de nova linha do buffer de entrada
+            getchar(); 
 
             printf("Os dados do usuário foram atualizados com sucesso!\n");
             return;
@@ -197,7 +197,7 @@ void excluirUsuario() {
     int id;
     printf("Digite o ID do usuário que deseja excluir: ");
     scanf("%d", &id);
-    getchar(); // Limpar o caractere de nova linha do buffer de entrada
+    getchar(); 
 
     for (int i = 0; i < numUsuarios; i++) {
         if (usuarios[i].id == id) {
@@ -271,7 +271,7 @@ void fazerBackup() {
 int main() {
     int opcao;
 
-    srand(time(NULL)); // Inicializar o gerador de números aleatórios
+    srand(time(NULL)); 
 
     do {
         printf("Selecione uma opção:\n");
@@ -284,7 +284,7 @@ int main() {
         printf("7. sair\n");
         printf("Opção: ");
         scanf("%d", &opcao);
-        getchar(); // Limpar o caractere de nova linha do buffer de entrada
+        getchar(); 
         printf("\n");
 
         switch (opcao) {
@@ -318,4 +318,3 @@ int main() {
     } while (opcao != 8);
 
     return 0;
-}
