@@ -25,19 +25,19 @@ int validarEmail(const char *email) {
     return at != NULL;
 }
 
-// Função para verificar se o sexo é válido
+
 int validarSexo(const char *sexo) {
     return strcmp(sexo, "Feminino") == 0 ||
            strcmp(sexo, "Masculino") == 0 ||
            strcmp(sexo, "Indiferente") == 0;
 }
 
-// Função para verificar se a altura é válida
+
 int validarAltura(double altura) {
     return altura >= 1.0 && altura <= 2.0;
 }
 
-// Função para adicionar um novo usuário
+
 void adicionarUsuario() {
     if (numUsuarios >= MAX_USERS) {
         printf("Limite de usuários atingido.\n");
@@ -96,7 +96,7 @@ void adicionarUsuario() {
     printf("O usuário foi cadastrado com sucesso!\n");
 }
 
-// Função para exibir os dados de um usuário
+
 void exibirUsuario(const Usuario *usuario) {
     printf("ID: %d\n", usuario->id);
     printf("Nome: %s\n", usuario->nome);
@@ -107,7 +107,7 @@ void exibirUsuario(const Usuario *usuario) {
     printf("Vacina: %d\n", usuario->vacina);
 }
 
-// Função para exibir todos os usuários
+
 void exibirUsuarios() {
     if (numUsuarios == 0) {
         printf("Não há usuários cadastrados.\n");
@@ -121,7 +121,7 @@ void exibirUsuarios() {
     }
 }
 
-// Função para editar os dados de um usuário
+
 void editarUsuario() {
     if (numUsuarios == 0) {
         printf("Não há usuários cadastrados.\n");
@@ -187,7 +187,7 @@ void editarUsuario() {
     printf("Usuário com ID %d não encontrado.\n", id);
 }
 
-// Função para excluir um usuário
+
 void excluirUsuario() {
     if (numUsuarios == 0) {
         printf("Não há usuários cadastrados.\n");
@@ -242,7 +242,7 @@ void excluirUsuario() {
     printf("Restauração concluída. Foram recuperados %d usuários.\n", numUsuarios);
 }
 
-// Função para realizar o backup dos dados
+
 void fazerBackup() {
     FILE *arquivo = fopen("backup.txt", "w");
 
